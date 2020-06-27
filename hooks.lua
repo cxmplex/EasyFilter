@@ -30,7 +30,6 @@ function frame:OnEvent(...)
     EASYFILTER_FILTER_CACHE = {}
   end
   EASYFILTER_PRINT_MESSAGES = true
-  -- merge the filter cache (user defined)
 end
 
 -- register our OnEvent
