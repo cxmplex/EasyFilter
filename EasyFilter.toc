@@ -1,0 +1,7 @@
+## Interface: 80300
+## Version: v1.0
+## Title: EasyFilter
+## Notes: Easily Filter Messages
+## Author: github.com/cxmplex
+hooks.lua
+EasyFilter.lua
