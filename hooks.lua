@@ -1,5 +1,4 @@
 -- github.com/cxmplex
-
 -- register chat event hooks
 local chat_events = {
   "CHAT_MSG_SAY",
@@ -11,7 +10,7 @@ local chat_events = {
 
 -- call filter.lua:FilterText for evaluation
 local function chatEventHook(self, event, msg)
-  if not FilterText(msg) then
+  if FilterText and FilterText(msg) then
     return true
   end
 end
@@ -27,22 +26,27 @@ frame:RegisterEvent("ADDON_LOADED")
 -- no need to filter event as we're only registering one
 function frame:OnEvent(...)
   -- if this event hook is called, then sessionvariables have been loaded
-  for k, v in pairs EASYFILTER_FILTER_CACHE do
-    EASYFILTER_DEFAULT_FILTERS[k] = v
+  if not EASYFILTER_FILTER_CACHE then
+    EASYFILTER_FILTER_CACHE = {}
   end
+  EASYFILTER_PRINT_MESSAGES = true
+  -- merge the filter cache (user defined)
 end
 
 -- register our OnEvent
 frame:SetScript("OnEvent", frame.OnEvent)
 
 -- create cmd filter
-SLASH_EASYFILTER = "/ef"
-function SlashCmdList.EASYFILTER(msg)
+SLASH_EASYFILTER1 = "/ef"
+SlashCmdList["EASYFILTER"] = function (msg)
   -- parse chat message for command, and arguments
-  local _, _, cmd, args = string.find(msg, "%s?(%w+)%s?(.*)")
+  local _, _, cmd, regex = string.find(msg, "%s?(%w+)%s?(.*)")
   if cmd == "add" then
-    EASYFILTER_FILTER_CACHE[tostring(GetTime())] = args[0]
+    EASYFILTER_FILTER_CACHE[regex] = regex
     return true
+  end
+  if cmd == "silence" then
+    EASYFILTER_PRINT_MESSAGES = false
   end
   print("You entered an invalid command!")
 end
