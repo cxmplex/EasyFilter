@@ -8,9 +8,12 @@ EASYFILTER_DEFAULT_FILTERS = {
 local LocalCache = {}
 -- iterate all filters, run string find
 FilterText = function(msg)
+  -- merge the filter cache (user defined) |
+  -- this could be tied to an event instead
   for k, v in pairs(EASYFILTER_FILTER_CACHE) do
     EASYFILTER_DEFAULT_FILTERS[k] = v
   end
+  -- run str.find on each filter
   local lMsg = string.lower(msg)
   for _, filter in pairs(EASYFILTER_DEFAULT_FILTERS) do
     if string.find(lMsg, filter) then
@@ -18,7 +21,7 @@ FilterText = function(msg)
         print("Blocking Message: " .. msg)
         LocalCache[lMsg] = 1
       end
-      return True
+      return true
     end
   end
 end
