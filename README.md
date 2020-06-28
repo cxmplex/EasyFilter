@@ -19,6 +19,7 @@ https://www.reddit.com/r/wow/comments/hgznc8/i_made_a_simple_lightweight_chat_fi
 
 * **Remove a filter:**
    * `/ef del filter`
+
 * **Enable preset filters:**
    * `/ef enablepreset filterName` currently only "boosting" is available
     * `/ef enablepreset boosting` will block most boosting posts
@@ -37,5 +38,9 @@ https://www.reddit.com/r/wow/comments/hgznc8/i_made_a_simple_lightweight_chat_fi
 
 * **Delete a filter:**
     * `/ef disablepreset filterName`
+
 * **Disable "Blocking" Notification:**
     * `/ef silence`
+
+* **Clear enabled-presets & user defined filters**
+    * `/ef clear`

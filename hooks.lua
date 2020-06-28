@@ -49,32 +49,29 @@ SlashCmdList["EASYFILTER"] = function (msg)
       print("Failed to parse entry " .. regex)
     end
     return true
-  end
-  if cmd == "silence" then
+  elseif cmd == "silence" then
     EASYFILTER_PRINT_MESSAGES = not EASYFILTER_PRINT_MESSAGES
     return true
-  end
-  if cmd == "del" then
+  elseif cmd == "del" then
     if EASYFILTER_FILTER_CACHE[regex] then
       EasyFilter.RemoveByKey(EASYFILTER_FILTER_CACHE, regex)
     else
       print("Unable to find this entry!")
     end
-    return true
-  end
-
-  if cmd == "enablepreset" then
+  elseif cmd == "enablepreset" then
     EasyFilter.AddPreset(regex)
     return true
-  end
-  if cmd == "disablepreset" then
+  elseif cmd == "disablepreset" then
     EasyFilter.RemovePreset(regex)
     return true
-  end
-  if cmd == "list" then
+  elseif cmd == "list" then
     for _, v in pairs(EASYFILTER_FILTER_CACHE) do
       print("Entry: " .. v)
     end
+    return true
+  elseif cmd == "clear" then
+    EASYFILTER_FILTER_CACHE = {}
+  else
+    print("You entered an invalid command!")
   end
-  print("You entered an invalid command!")
 end

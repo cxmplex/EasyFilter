@@ -14,9 +14,9 @@ Presets["boosting"] = {
   "wts.+nya.+heroic", "weekend%sspecial", "wts.+visions.+mask", "wts%s5%smask", "wts.+five mask",
   "wts.+full%s-clear", "wts.+boost", "weekend%sdiscount", "weekend%ssales", "timer guarantee",
   "guaranteed in%s-time", "wts.+pvp.+boost", "wts mythic", "wts 12/12", "wts.+nzoth", "gold%sonly", "only%sgold",
-  "<Massive Deals>", "specific keys (%()?%d+k(%))?", "oblivion boosting", "oblivion community", "nova community", "nova boosting",
-  "sylvanas Community", "sylvanas boosting", "wts.+curve.+mount", "wts.+aotc.+mount", "armorstack", "lootstack", "selling.+nyalotha.+heroic.+run",
-  "m[%s%(%)%[%]%]%d%-+]+.+%d%d%d[%s%|k]", "come.+get.+aotc", "come.+get.+ahead of the curve", "wts %d%d.+key", "armor.+stack.+free", "free.+armor.+stack",
+  "<Massive Deals>", "mythic.+specific key", "wts.+specific key", "oblivion boosting", "oblivion community", "nova community", "nova boosting",
+  "sylvanas community", "sylvanas boosting", "wts.+curve.+mount", "wts.+aotc.+mount", "armorstack", "lootstack", "selling.+nyalotha.+heroic.+run",
+  "m[%s%(%)%[%]%]%d%-+]+.+%d%d%d%s-|-k", "come.+get.+aotc", "come.+get.+ahead of the curve", "wts %d%d.+key", "armor.+stack.+free", "free.+armor.+stack",
   "wts.+cheap.+time", "wts.+stack.+armor", "wts.+loot.+tradeable", "wts.+special.+price", "wts.+discount.+price", "wts.+special.+%d%d%d", "wts.+discount.+%d%d%d", "stack armor"
 }
 
@@ -54,15 +54,12 @@ end
 
 EasyFilter.AddPreset = function(preset)
   for _, filter in ipairs(Presets[preset]) do
-    res = EasyFilter.ValidateRegex(filter)
-    if not res then return end
-    EASYFILTER_FILTER_CACHE[res] = res
+    EASYFILTER_FILTER_CACHE[filter] = filter
   end
 end
 
 EasyFilter.RemovePreset = function(preset)
   for _, filter in ipairs(Presets[preset]) do
-    res = EasyFilter.ValidateRegex(filter)
-    EasyFilter.RemoveByKey(EASYFILTER_FILTER_CACHE, res)
+    EasyFilter.RemoveByKey(EASYFILTER_FILTER_CACHE, filter)
   end
 end
