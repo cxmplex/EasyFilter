@@ -30,7 +30,7 @@ function frame:OnEvent(...)
   if not EASYFILTER_FILTER_CACHE then
     EASYFILTER_FILTER_CACHE = {}
   end
-  EASYFILTER_PRINT_MESSAGES = true
+  EASYFILTER_PRINT_MESSAGES = false
 end
 
 -- register our OnEvent
@@ -51,7 +51,7 @@ SlashCmdList["EASYFILTER"] = function (msg)
     return true
   end
   if cmd == "silence" then
-    EASYFILTER_PRINT_MESSAGES = false
+    EASYFILTER_PRINT_MESSAGES = not EASYFILTER_PRINT_MESSAGES
     return true
   end
   if cmd == "del" then
