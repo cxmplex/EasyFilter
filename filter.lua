@@ -13,7 +13,7 @@ Presets["boosting"] = {
   "selling mythic", "with top US guilds", "free.+armor.+stack", "wts.+heroic.+nya",
   "wts.+nya.+heroic", "weekend%sspecial", "wts.+visions.+mask", "wts%s5%smask", "wts.+five mask",
   "wts.+full%s-clear", "wts.+boost", "weekend%sdiscount", "weekend%ssales", "timer guarantee",
-  "guaranteed in%s-time"
+  "guaranteed in%s-time", "wts.+pvp.+boost", "wts mythic", "wts 12/12", "wts.+nzoth", "gold%sonly", "only%sgold"
 }
 
 local LocalCache = {}
