@@ -16,7 +16,7 @@ Presets["boosting"] = {
   "guaranteed in%s-time", "wts.+pvp.+boost", "wts mythic", "wts 12/12", "wts.+nzoth", "gold%sonly", "only%sgold",
   "<Massive Deals>", "specific keys (%()?%d+k(%))?", "oblivion boosting", "oblivion community", "nova community", "nova boosting",
   "sylvanas Community", "sylvanas boosting", "wts.+curve.+mount", "wts.+aotc.+mount", "armorstack", "lootstack", "selling.+nyalotha.+heroic.+run",
-  "m[%s%(%)%[%]%]%d%-+]+.+%d%d%d[%s%|k]", "come.+get.+aotc", "come.+get.+ahead of the curve"
+  "m[%s%(%)%[%]%]%d%-+]+.+%d%d%d[%s%|k]", "come.+get.+aotc", "come.+get.+ahead of the curve", "wts %d%d.+key", "armor.+stack.+free", "free.+armor.+stack"
 }
 
 Presets["twitch"] = {
