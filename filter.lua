@@ -10,9 +10,10 @@ local Presets = {}
 Presets["boosting"] = {
   "huokan", "wts.+ny'?a.+mythic", "%sgallywix%s", "freehold.+leveling",
   "boost.+freehold", "wowbop", "freehold.+boost", "wts.+m%s?%+-[%d]+",
-  "selling mythic", "with top US guilds", "free%sarmor%stack", "wts.+heroic.+nya",
+  "selling mythic", "with top US guilds", "free.+armor.+stack", "wts.+heroic.+nya",
   "wts.+nya.+heroic", "weekend%sspecial", "wts.+visions.+mask", "wts%s5%smask", "wts.+five mask",
-  "wts.+full%s-clear", "wts.+boost", "weekend%sdiscount", "weekend%ssales"
+  "wts.+full%s-clear", "wts.+boost", "weekend%sdiscount", "weekend%ssales", "timer guarantee",
+  "guaranteed in%s-time"
 }
 
 local LocalCache = {}
