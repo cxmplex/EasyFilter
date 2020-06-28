@@ -71,5 +71,10 @@ SlashCmdList["EASYFILTER"] = function (msg)
     EasyFilter.RemovePreset(regex)
     return true
   end
+  if cmd == "list" then
+    for _, v in pairs(EASYFILTER_FILTER_CACHE) do
+      print("Entry: " .. v)
+    end
+  end
   print("You entered an invalid command!")
 end
