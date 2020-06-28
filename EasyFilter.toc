@@ -4,6 +4,7 @@
 ## SavedVariables: EASYFILTER_FILTER_CACHE
 ## Notes: Easily Filter Messages
 ## Author: github.com/cxmplex
+EasyFilter.lua
+luautils.lua
 filter.lua
 hooks.lua
-EasyFilter.lua

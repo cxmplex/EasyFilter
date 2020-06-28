@@ -1,4 +1,5 @@
 -- github.com/cxmplex
+
 -- register chat event hooks
 local chat_events = {
   "CHAT_MSG_SAY",
@@ -10,7 +11,7 @@ local chat_events = {
 
 -- call filter.lua:FilterText for evaluation
 local function chatEventHook(self, event, msg)
-  if FilterText and FilterText(msg) then
+  if EasyFilter.FilterText and EasyFilter.FilterText(msg) then
     return true
   end
 end
@@ -41,11 +42,34 @@ SlashCmdList["EASYFILTER"] = function (msg)
   -- parse chat message for command, and arguments
   local _, _, cmd, regex = string.find(msg, "%s?(%w+)%s?(.*)")
   if cmd == "add" then
-    EASYFILTER_FILTER_CACHE[regex] = regex
+    local res = EasyFilter.ValidateRegex(regex)
+    if res then
+      EASYFILTER_FILTER_CACHE[res] = res
+    else
+      print("Failed to parse entry " .. regex)
+    end
     return true
   end
   if cmd == "silence" then
     EASYFILTER_PRINT_MESSAGES = false
+    return true
+  end
+  if cmd == "del" then
+    if EASYFILTER_FILTER_CACHE[regex] then
+      EasyFilter.RemoveByKey(EASYFILTER_FILTER_CACHE, regex)
+    else
+      print("Unable to find this entry!")
+    end
+    return true
+  end
+
+  if cmd == "enablepreset" then
+    EasyFilter.AddPreset(regex)
+    return true
+  end
+  if cmd == "disablepreset" then
+    EasyFilter.RemovePreset(regex)
+    return true
   end
   print("You entered an invalid command!")
 end
