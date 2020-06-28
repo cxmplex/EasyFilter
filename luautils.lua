@@ -35,7 +35,7 @@ EasyFilter.ValidateRegex = function(regex)
       _, _, group = string.find(regex, "(%(.+%)){%d+,%s-%d-}")
       if not group then return false end
       local appendedBoundary = ""
-      -- repeat the class low bound times
+      -- repeat the group low bound times
       for i = 1, boundary do
         appendedBoundary = appendedBoundary .. group
       end
@@ -50,6 +50,7 @@ EasyFilter.ValidateRegex = function(regex)
       regex = res
     end
   end
+  -- replace ? conditional with -
   res, _ = regex:gsub("%+%?", "-")
   if res then regex = res end
   return regex

@@ -2,7 +2,7 @@
 
 -- global list to merge with session variables
 EASYFILTER_DEFAULT_FILTERS = {
-  "gteam\.pro"
+  "gteam%.pro"
 }
 
 local Presets = {}
@@ -14,7 +14,19 @@ Presets["boosting"] = {
   "wts.+nya.+heroic", "weekend%sspecial", "wts.+visions.+mask", "wts%s5%smask", "wts.+five mask",
   "wts.+full%s-clear", "wts.+boost", "weekend%sdiscount", "weekend%ssales", "timer guarantee",
   "guaranteed in%s-time", "wts.+pvp.+boost", "wts mythic", "wts 12/12", "wts.+nzoth", "gold%sonly", "only%sgold",
-  "<Massive Deals>", "specific keys (%()?%d+k(%))?"
+  "<Massive Deals>", "specific keys (%()?%d+k(%))?", "oblivion boosting", "oblivion community", "nova community", "nova boosting",
+  "sylvanas Community", "sylvanas boosting", "wts.+curve.+mount", "wts.+aotc.+mount", "armorstack", "lootstack", "selling.+nyalotha.+heroic.+run",
+  "m[%s%(%)%[%]%]%d%-+]+.+%d%d%d[%s%|k]", "come.+get.+aotc", "come.+get.+ahead of the curve"
+}
+
+Presets["twitch"] = {
+  "twitch%.tv%",
+  "[%a%d%-_]+TTV",
+  "twitch..-.-tv"
+}
+
+Presets["lang"] = {
+  "[\227-\237]"
 }
 
 local LocalCache = {}
