@@ -45,15 +45,15 @@ SlashCmdList["EASYFILTER"] = function (msg)
     local res = EasyFilter.ValidateRegex(regex)
     if res then
       EASYFILTER_FILTER_CACHE[res] = res
-      print("EasyFilter: Added entry " .. regex)
+      print("EasyFilter: Added Preset " .. regex)
     else
       print("Failed to parse entry " .. regex)
     end
   elseif cmd == "silence" then
     EASYFILTER_PRINT_MESSAGES = not EASYFILTER_PRINT_MESSAGES
-    local toPrint = ""
-    if EASYFILTER_PRINT_MESSAGES then toPrint = "Enabled" else toPrint = "Disabled" end
-    print("EasyFilter: Mute Messages " .. toPrint)
+    local print = ""
+    if EASYFILTER_PRINT_MESSAGES then print = "Enabled" else print = "Disabled" end
+    print("EasyFilter: Mute Messages " .. print)
   elseif cmd == "del" then
     if EASYFILTER_FILTER_CACHE[regex] then
       EasyFilter.RemoveByKey(EASYFILTER_FILTER_CACHE, regex)
