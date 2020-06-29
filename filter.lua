@@ -14,10 +14,11 @@ Presets["boosting"] = {
   "wts.+nya.+heroic", "weekend%sspecial", "wts.+visions.+mask", "wts%s5%smask", "wts.+five mask",
   "wts.+full%s-clear", "wts.+boost", "weekend%sdiscount", "weekend%ssales", "timer guarantee",
   "guaranteed in%s-time", "wts.+pvp.+boost", "wts mythic", "wts 12/12", "wts.+nzoth", "gold%sonly", "only%sgold",
-  "<Massive Deals>", "mythic.+specific key", "wts.+specific key", "oblivion boosting", "oblivion community", "nova community", "nova boosting",
+  "<Massive Deals>", "mythic.+specific key", "wts.+specific key", "oblivion boost", "oblivion community", "nova community", "nova boosting",
   "sylvanas community", "sylvanas boosting", "wts.+curve.+mount", "wts.+aotc.+mount", "armorstack", "lootstack", "selling.+nyalotha.+heroic.+run",
   "m[%s%(%)%[%]%]%d%-+]+.+%d%d%d%s-|-k", "come.+get.+aotc", "come.+get.+ahead of the curve", "wts %d%d.+key", "armor.+stack.+free", "free.+armor.+stack",
-  "wts.+cheap.+time", "wts.+stack.+armor", "wts.+loot.+tradeable", "wts.+special.+price", "wts.+discount.+price", "wts.+special.+%d%d%d", "wts.+discount.+%d%d%d", "stack armor"
+  "wts.+cheap.+time", "wts.+stack.+armor", "wts.+loot.+tradeable", "wts.+special.+price", "wts.+discount.+price", "wts.+special.+%d%d%d", "wts.+discount.+%d%d%d", "stack armor",
+  "loot%sfunnel", "m%+%d%d-%d%d", "hydra community", "gold.only.boosting", "nya.+tonight.+%d%d%dk", "gallywix.+sale", "wts pvp mount", "monday.sale.+%d%d%dk", "12/12.+%d%d%dk"
 }
 
 Presets["twitch"] = {

@@ -45,32 +45,35 @@ SlashCmdList["EASYFILTER"] = function (msg)
     local res = EasyFilter.ValidateRegex(regex)
     if res then
       EASYFILTER_FILTER_CACHE[res] = res
+      print("EasyFilter: Added Preset " .. regex)
     else
       print("Failed to parse entry " .. regex)
     end
-    return true
   elseif cmd == "silence" then
     EASYFILTER_PRINT_MESSAGES = not EASYFILTER_PRINT_MESSAGES
-    return true
+    local print = ""
+    if EASYFILTER_PRINT_MESSAGES then print = "Enabled" else print = "Disabled" end
+    print("EasyFilter: Mute Messages " .. print)
   elseif cmd == "del" then
     if EASYFILTER_FILTER_CACHE[regex] then
       EasyFilter.RemoveByKey(EASYFILTER_FILTER_CACHE, regex)
+      print("EasyFilter: Removed entry " .. regex)
     else
       print("Unable to find this entry!")
     end
   elseif cmd == "enablepreset" then
     EasyFilter.AddPreset(regex)
-    return true
+    print("EasyFilter: Enabled Preset " .. regex)
   elseif cmd == "disablepreset" then
     EasyFilter.RemovePreset(regex)
-    return true
+    print("EasyFilter: Disabled Preset " .. regex)
   elseif cmd == "list" then
     for _, v in pairs(EASYFILTER_FILTER_CACHE) do
       print("Entry: " .. v)
     end
-    return true
   elseif cmd == "clear" then
     EASYFILTER_FILTER_CACHE = {}
+    print("EasyFilter: Cleared filter cache!")
   else
     print("You entered an invalid command!")
   end
